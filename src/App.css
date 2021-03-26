@@ -1,4 +1,29 @@
-.App {
-  text-align: center;
+.nav {
+  background: #000;
+  color: #fff;
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
 }
 
+.nav__logo {
+  font-size: 1.5rem;
+  font-weight: bold;;
+}
+
+.nav__navbar {
+  width: 100%;
+  margin: 0 0 0 1rem; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__userItems {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__userItems li {
+  padding: 0 0 0 1rem;
+}
