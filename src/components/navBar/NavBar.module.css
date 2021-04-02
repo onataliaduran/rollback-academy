@@ -1,5 +1,5 @@
 .nav {
-    background: #000;
+    background: #1A1C21;
     color: #fff;
     padding: 1rem 1rem;
     display: flex;
@@ -38,6 +38,6 @@
   }
 
   .navbar__userItems li div:hover {
-    background: gray;
+    background: #2F3035;
   }
   

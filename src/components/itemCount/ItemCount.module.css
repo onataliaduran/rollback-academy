@@ -1,0 +1,16 @@
+.counter {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: .3rem;
+}
+
+.btn {
+    background: #2F3035;
+    color: #fff;
+    padding: .5rem;
+    border: none;
+    border-radius: .2rem;
+    margin: .3rem;
+    outline: none;
+    cursor: pointer;
+}
