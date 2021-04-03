@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Banner = () => {
+const Banner = ({ categoryHeader }) => {
     return (
         <div>
-            Banner goes here
+            {categoryHeader}
         </div>
     )
 }

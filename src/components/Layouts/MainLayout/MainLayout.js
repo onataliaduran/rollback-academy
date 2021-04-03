@@ -1,13 +1,28 @@
 // Component responsable for distributing the navigation elements and the main content in the space 
 
-import styles from './MainLayout.module.css';
 import React from 'react';
+import styles from './MainLayout.module.css';
+import { Switch, Route } from "react-router-dom";
 
-const MainLayout = (props) => {
+import NavBar from '../../Navigation/NavBar/NavBar';
+import CoursesContainer from '../../../containers/CoursesContainer/CoursesContainer';
+import Cart from '../../Cart/Cart';
+
+const MainLayout = () => {
     return (
+
         <div className={styles.container}>
-            <div>Navbar</div>
-            <div>{props.children}</div>
+            <NavBar />
+            
+            <Switch>
+                <Route exact path="/">
+                    <CoursesContainer />
+                </Route>
+                <Route path="/cart">
+                    <Cart />
+                </Route>
+            </Switch>
+
         </div>
     )
 }

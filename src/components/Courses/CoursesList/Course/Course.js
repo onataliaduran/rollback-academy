@@ -1,9 +1,11 @@
 import React from 'react';
 
-export const Course = () => {
+export const Course = ({ title, description, price }) => {
     return (
         <div>
-            Single course
+            <p>{title}</p>
+            <p>{description}</p>
+            <p>${price}</p>
         </div>
     )
 }

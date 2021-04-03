@@ -1,13 +1,13 @@
 import './App.css';
+import { BrowserRouter } from "react-router-dom";
 import MainLayout from './components/Layouts/MainLayout/MainLayout';
-import CoursesContainer from './components/Courses/CoursesContainer/CoursesContainer';
 
 function App() {
   return (
     <div className="App">
-        <MainLayout>
-          <CoursesContainer />
-        </MainLayout>
+        <BrowserRouter>
+          <MainLayout />
+        </BrowserRouter>
     </div>
   );
 }
