@@ -1,0 +1,16 @@
+.container {
+  background: #2f3035;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.btn {
+  background: #1a1c21;
+  color: #fff;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  margin: 0.3rem 0;
+  outline: none;
+  cursor: pointer;
+}
