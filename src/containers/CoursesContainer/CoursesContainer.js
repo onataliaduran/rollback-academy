@@ -9,7 +9,7 @@ import CoursesList from '../../components/Courses/CoursesList/CoursesList';
 const CoursesContainer = (props) => {
 
     const [coursesList, setCoursesList] = useState(courses);
-    // console.log(props);
+    console.log(props);
 
     return (
         <div>

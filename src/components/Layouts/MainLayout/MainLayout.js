@@ -16,7 +16,7 @@ const MainLayout = () => {
             
             <Switch>
                 <Route exact path="/">
-                    <CoursesContainer />
+                    <CoursesContainer test="some text" />
                 </Route>
                 <Route path="/cart">
                     <Cart />
