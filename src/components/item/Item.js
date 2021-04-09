@@ -6,6 +6,7 @@ const Item = ({ title, price }) => {
     <div className={styles.container}>
       <h2>{title}</h2>
       <p>${price}</p>
+      <button className={styles.btn}>View details</button>
       <button className={styles.btn}>Add to cart</button>
     </div>
   );
