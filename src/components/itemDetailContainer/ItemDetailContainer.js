@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
     getCourse.then(() => {
       setCourseDetail({ ...coursesData[0] });
     });
-  }, []);
+  });
 
   return (
     <div>
