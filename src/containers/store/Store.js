@@ -30,7 +30,7 @@ class Store extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <ItemCount
           counter={this.state.count}
           addHandler={this.addItemHandler}
@@ -40,7 +40,7 @@ class Store extends Component {
         {this.state.total ? (
           <p>You added {this.state.total} courses to your shopping cart!</p>
         ) : null}
-      </div>
+      </>
     );
   }
 }

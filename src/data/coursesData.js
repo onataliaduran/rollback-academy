@@ -26,4 +26,28 @@ export const coursesData = [
     category: "Frontend",
     selected: false,
   },
+  {
+    id: 4,
+    title: "Algorithms",
+    description: "Lorem ipsum...",
+    price: 10.99,
+    category: "Progamming Fundamentals",
+    selected: false,
+  },
+  {
+    id: 5,
+    title: "Data Structure",
+    description: "Lorem ipsum...",
+    price: 10.99,
+    category: "Progamming Fundamentals",
+    selected: false,
+  },
+  {
+    id: 6,
+    title: "Design Patterns",
+    description: "Lorem ipsum...",
+    price: 10.99,
+    category: "Progamming Fundamentals",
+    selected: false,
+  },
 ];
