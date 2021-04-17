@@ -1,0 +1,9 @@
+.header__container {
+  background-color: #1a1c21;
+  height: 9rem;
+  border-radius: 0.2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

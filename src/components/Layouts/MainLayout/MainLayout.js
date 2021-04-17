@@ -1,30 +1,41 @@
-// Component responsable for distributing the navigation elements and the main content in the space 
+// Component responsable for distributing the navigation elements and the main content in the space
 
-import React from 'react';
-import styles from './MainLayout.module.css';
+import React, { useState } from "react";
+import styles from "./MainLayout.module.css";
 import { Switch, Route } from "react-router-dom";
-
-import NavBar from '../../Navigation/NavBar/NavBar';
-import CoursesContainer from '../../../containers/CoursesContainer/CoursesContainer';
-import Cart from '../../Cart/Cart';
+// Components
+import NavBar from "../../Navigation/NavBar/NavBar";
+import CoursesContainer from "../../../containers/CoursesContainer/CoursesContainer";
+import Cart from "../../Cart/Cart";
 
 const MainLayout = () => {
-    return (
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownHandler = () => setOpenDropdown(!openDropdown);
+  const closeDropdown = () => setOpenDropdown(false);
 
-        <div className={styles.container}>
-            <NavBar />
-            
-            <Switch>
-                <Route exact path="/">
-                    <CoursesContainer test="some text" />
-                </Route>
-                <Route path="/cart">
-                    <Cart />
-                </Route>
-            </Switch>
+  return (
+    <>
+      <NavBar
+        openDropdown={openDropdown}
+        dropdownHandler={dropdownHandler}
+        closeDropdown={closeDropdown}
+      />
 
-        </div>
-    )
-}
+      <main className={styles.layout__content} onClick={closeDropdown}>
+        <Switch>
+          <Route exact path="/">
+            <CoursesContainer />
+          </Route>
+          <Route exact path="/category/:id">
+            <CoursesContainer />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+        </Switch>
+      </main>
+    </>
+  );
+};
 
 export default MainLayout;
