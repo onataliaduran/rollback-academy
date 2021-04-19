@@ -6,6 +6,6 @@ El concepto detras de este proyecto es crear una tienda para comprar cursos onli
 
 ## Scripts
 
-Para correrlo en local, como todo proyetco de create-ract-app, se debe correr:
+Para levantar en local, como todo proyetco de create-ract-app, se debe correr:
 
 ### `npm start`
