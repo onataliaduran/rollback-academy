@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./CoursesList.module.css";
+import { Link } from "react-router-dom";
 import Course from "./Course/Course";
 
 const CoursesList = ({ courses }) => {
@@ -7,13 +8,14 @@ const CoursesList = ({ courses }) => {
     <div className={styles.courses__grid}>
       {courses.map((course) => {
         return (
-          <Course
-            key={course.id}
-            img={course.img}
-            title={course.title}
-            description={course.description}
-            price={course.price}
-          />
+          <Link key={course.id} to={`/course/${course.id}`}>
+            <Course
+              img={course.img}
+              title={course.title}
+              description={course.description}
+              price={course.price}
+            />
+          </Link>
         );
       })}
     </div>

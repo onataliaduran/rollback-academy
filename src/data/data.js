@@ -61,6 +61,8 @@ export const allCourses = [
   },
   {
     id: 7,
+    img:
+      "https://firebasestorage.googleapis.com/v0/b/pruebachicos-ojdmti.appspot.com/o/rollback%2Fnode%20(1).png?alt=media&token=ddb83ca2-ce2b-40c2-9630-95bad225b77d",
     title: "Node",
     description:
       "Bacon ipsum dolor amet shoulder doner beef, brisket short ribs chuck bresaola pork loin short loin filet mignon.",
@@ -69,6 +71,8 @@ export const allCourses = [
   },
   {
     id: 8,
+    img:
+      "https://firebasestorage.googleapis.com/v0/b/pruebachicos-ojdmti.appspot.com/o/rollback%2Fdeno%20(1).png?alt=media&token=558c674a-53db-41e2-905b-be93e6e0c097",
     title: "Deno",
     description:
       "Bacon ipsum dolor amet shoulder doner beef, brisket short ribs chuck bresaola pork loin short loin filet mignon.",
@@ -77,5 +81,31 @@ export const allCourses = [
   },
 ];
 
-export const getCategory = (category) =>
-  allCourses.filter((course) => course.category === category);
+export const filterByCategory = (category) => {
+  return allCourses.filter((course) => course.category === category);
+};
+
+export const getSingleCourse = (id) => {
+  return allCourses.filter((course) => course.id === id);
+};
+
+export const categories = [
+  {
+    payload: "frontend",
+    title: "Frontend",
+  },
+  {
+    payload: "backend",
+    title: "Backend",
+  },
+  {
+    payload: "programingFundamentals",
+    title: "Programing Fundamentals",
+  },
+];
+
+export const getCategoryTitle = (routingId) => {
+  return categories.filter(
+    (singleCategory) => singleCategory.payload === routingId
+  );
+};

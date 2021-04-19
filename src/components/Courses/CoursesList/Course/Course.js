@@ -9,9 +9,9 @@ export const Course = ({ img, title, description, price }) => {
           <img className={styles.course__img} src={img} alt={title} />
         </div>
       )}
-      <h3>{title}</h3>
+      <h3 className={styles.course__title}>{title}</h3>
       <p className={styles.course__desc}>{description}</p>
-      <p>${price}</p>
+      <p className={styles.course__price}>${price}</p>
       <button className={styles.course__btn}>Add to cart</button>
     </div>
   );

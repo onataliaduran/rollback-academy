@@ -1,23 +1,22 @@
-// Component responsable for distributing the navigation elements and the main content in the space
-
 import React, { useState } from "react";
 import styles from "./MainLayout.module.css";
 import { Switch, Route } from "react-router-dom";
 // Components
 import NavBar from "../../Navigation/NavBar/NavBar";
 import CoursesContainer from "../../../containers/CoursesContainer/CoursesContainer";
+import CourseDetailContainer from "../../../containers/CourseDetailContainer/CourseDetailContainer";
 import Cart from "../../Cart/Cart";
 
 const MainLayout = () => {
-  const [openDropdown, setOpenDropdown] = useState(false);
-  const dropdownHandler = () => setOpenDropdown(!openDropdown);
-  const closeDropdown = () => setOpenDropdown(false);
+  const [dropdownOpened, setDropdownOpened] = useState(false);
+  const dropdownToggler = () => setDropdownOpened(!dropdownOpened);
+  const closeDropdown = () => setDropdownOpened(false);
 
   return (
     <>
       <NavBar
-        openDropdown={openDropdown}
-        dropdownHandler={dropdownHandler}
+        dropdownOpened={dropdownOpened}
+        dropdownToggler={dropdownToggler}
         closeDropdown={closeDropdown}
       />
 
@@ -28,6 +27,9 @@ const MainLayout = () => {
           </Route>
           <Route exact path="/category/:id">
             <CoursesContainer />
+          </Route>
+          <Route exact path="/course/:id">
+            <CourseDetailContainer />
           </Route>
           <Route path="/cart">
             <Cart />

@@ -1,0 +1,22 @@
+.nav__dropdown {
+  background-color: #2a2b2e;
+  width: 11rem;
+  height: 13rem;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  position: absolute;
+  top: 2rem;
+}
+
+.nav__dropdownLink {
+  margin-bottom: 1rem;
+}
+
+.nav__dropdownItem {
+  display: flex;
+}
+
+.nav__dropdownIcon {
+  font-size: 1.1rem;
+  margin-right: 0.9rem;
+}
