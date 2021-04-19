@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./CourseDetail.module.css";
+import CounterContainer from "../../../containers/CounterContainer/CounterContainer";
 
 export const CourseDetail = ({ details }) => {
   return (
@@ -15,7 +16,7 @@ export const CourseDetail = ({ details }) => {
         <h1 className={styles.details__title}>{details.title} </h1>
         <p className={styles.details__price}>{details.price}</p>
         <p className={styles.details__description}>{details.description}</p>
-        <button className={styles.btn__buy}>Buy now</button>
+        <CounterContainer />
       </div>
     </div>
   );
