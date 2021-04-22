@@ -1,8 +1,14 @@
 import React from "react";
 import styles from "./Counter.module.css";
-import { Link } from "react-router-dom";
 
-const Counter = ({ counter, addHandler, removeHandler, buyEnabled, add }) => {
+const Counter = ({
+  counter,
+  addHandler,
+  removeHandler,
+  buyEnabled,
+  add,
+  txtBtn,
+}) => {
   return (
     <div>
       <span>Quantity</span>
@@ -16,11 +22,9 @@ const Counter = ({ counter, addHandler, removeHandler, buyEnabled, add }) => {
         </button>
       </div>
       {buyEnabled && (
-        <Link to="/cart">
-          <button className={styles.btn__outline} onClick={add}>
-            Terminar mi compra
-          </button>
-        </Link>
+        <button className={styles.btn__outline} onClick={add}>
+          {txtBtn}
+        </button>
       )}
     </div>
   );

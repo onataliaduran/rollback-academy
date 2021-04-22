@@ -1,13 +1,16 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter } from "react-router-dom";
-import MainLayout from './components/Layouts/MainLayout/MainLayout';
+import { CartProvider } from "../src/context/CartContext";
+import MainLayout from "./components/Layouts/MainLayout/MainLayout";
 
 function App() {
   return (
     <div className="App">
-        <BrowserRouter>
+      <BrowserRouter>
+        <CartProvider>
           <MainLayout />
-        </BrowserRouter>
+        </CartProvider>
+      </BrowserRouter>
     </div>
   );
 }
