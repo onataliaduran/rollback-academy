@@ -11,13 +11,11 @@ export const CartProvider = (props) => {
       setCart([...updatedArr]);
     } else {
       setCart([...cart, incomingItem]);
-      console.log(cart);
     }
   };
 
   const isInCart = (id) => {
     const exist = cart.some((i) => i.item.id === id);
-    console.log("eexiste", exist);
     return exist;
   };
 
@@ -35,9 +33,31 @@ export const CartProvider = (props) => {
 
   const deleteAll = () => setCart([]);
 
+  const acumulator = () => {
+    const newArr = [...cart];
+    const acumulator = newArr.reduce((sum, { quantity }) => sum + quantity, 0);
+    return acumulator;
+  };
+
+  const totalCalculator = () => {
+    const newArr = [...cart];
+    const calculator = newArr.reduce((sum, { item, quantity }) => {
+      return item.price * quantity + sum;
+    }, 0);
+    return calculator;
+  };
+
   return (
     <CartContext.Provider
-      value={[cart, addItem, isInCart, removeItem, deleteAll]}
+      value={{
+        cart,
+        addItem,
+        isInCart,
+        removeItem,
+        deleteAll,
+        acumulator,
+        totalCalculator,
+      }}
     >
       {props.children}
     </CartContext.Provider>

@@ -1,3 +1,15 @@
+.msjCont {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.msjtxt {
+  font-size: 1.5rem;
+}
+
 .btn {
   background-color: #0c0d0f;
   color: #fff;
@@ -7,4 +19,26 @@
   margin: 0.5rem 0.5rem;
   outline: none;
   cursor: pointer;
+}
+
+.cart__grid {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 5rem;
+  margin-right: 1rem;
+}
+
+.total {
+  font-size: 2.5rem;
+  font-weight: 700;
 }

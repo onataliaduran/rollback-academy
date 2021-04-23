@@ -1,10 +1,16 @@
 import React from "react";
 import styles from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { FiChevronDown, FiShoppingCart, FiUser } from "react-icons/fi";
+import { FiChevronDown, FiUser } from "react-icons/fi";
 import Dropdown from "../Dropdown/Dropdown";
+import CartWidget from "../../Cart/CartWidget/CartWidget";
 
-const NavBar = ({ dropdownOpened, dropdownToggler, closeDropdown }) => {
+const NavBar = ({
+  dropdownOpened,
+  dropdownToggler,
+  closeDropdown,
+  productsInCart,
+}) => {
   return (
     <header className={styles.nav}>
       <div className={styles.nav__logo}>
@@ -29,7 +35,7 @@ const NavBar = ({ dropdownOpened, dropdownToggler, closeDropdown }) => {
         <ul className={styles.nav__right}>
           <li className={styles.nav__item}>
             <NavLink to="/cart" activeClassName={styles.selected}>
-              <FiShoppingCart />
+              <CartWidget totalProducts={productsInCart} />
             </NavLink>
           </li>
           <li className={styles.nav__item}>

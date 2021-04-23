@@ -5,8 +5,7 @@ import { CartContext } from "../../../context/CartContext";
 import CounterContainer from "../../../containers/CounterContainer/CounterContainer";
 
 export const CourseDetail = ({ details }) => {
-  // eslint-disable-next-line no-unused-vars
-  const [cart, addItem, isInCart] = useContext(CartContext);
+  const { addItem, isInCart } = useContext(CartContext);
   const [alreadyAdded, setAlreadyAdded] = useState(false);
 
   const [stateItem, setStateItem] = useState(0);
