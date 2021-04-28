@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Course.module.css";
 
 export const Course = ({ img, title, description, price }) => {

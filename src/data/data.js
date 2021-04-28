@@ -1,3 +1,39 @@
+import { db } from "../db/firebase";
+
+export const getAllCourses = async () => {
+  const courses = await db.collection("courses").get();
+  const coursesArray = courses.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+  // console.log("all courses with their id", coursesArray);
+  return coursesArray;
+};
+
+export const getCourse = async (id) => {
+  const courseRef = await db.collection("courses").doc(id);
+  const course = await courseRef.get();
+  const singleCourse = {
+    id: course.id,
+    ...course.data(),
+  };
+  // console.log("single course", course.data());
+  return singleCourse;
+};
+
+export const getCoursesByCategory = async (categoryName) => {
+  const query = await db
+    .collection("courses")
+    .where("category", "==", categoryName);
+  const courses = await query.get();
+  const newCoursesArray = await courses.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+  // console.log("courses by a given category", newCoursesArray);
+  return newCoursesArray;
+};
+
 export const allCourses = [
   {
     id: 1,
@@ -82,6 +118,7 @@ export const allCourses = [
 ];
 
 export const filterByCategory = (category) => {
+  getAllCourses();
   return allCourses.filter((course) => course.category === category);
 };
 

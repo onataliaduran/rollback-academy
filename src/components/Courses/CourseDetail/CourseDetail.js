@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
-import styles from "./CourseDetail.module.css";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import styles from "./CourseDetail.module.css";
 import CounterContainer from "../../../containers/CounterContainer/CounterContainer";
 
 export const CourseDetail = ({ details }) => {
