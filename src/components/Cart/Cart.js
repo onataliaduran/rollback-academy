@@ -54,9 +54,14 @@ const Cart = ({ total }) => {
           </div>
           <div>
             {cart.length > 0 && (
-              <button className={styles.btn} onClick={deleteAll}>
-                Clear All
-              </button>
+              <>
+                <button className={styles.btn} onClick={deleteAll}>
+                  Clear All
+                </button>
+                <Link to="/checkout">
+                  <button className={styles.btn}>Checkout</button>
+                </Link>
+              </>
             )}
           </div>
         </div>

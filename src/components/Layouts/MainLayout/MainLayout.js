@@ -7,6 +7,7 @@ import NavBar from "../../Navigation/NavBar/NavBar";
 import CoursesContainer from "../../../containers/CoursesContainer/CoursesContainer";
 import CourseDetailContainer from "../../../containers/CourseDetailContainer/CourseDetailContainer";
 import Cart from "../../Cart/Cart";
+import Checkout from "../../Checkout/Checkout";
 
 const MainLayout = () => {
   const { acumulator, totalCalculator } = useContext(CartContext);
@@ -46,6 +47,9 @@ const MainLayout = () => {
           </Route>
           <Route path="/cart">
             <Cart total={total} />
+          </Route>
+          <Route path="/checkout">
+            <Checkout total={total} />
           </Route>
         </Switch>
       </main>

@@ -1,3 +1,4 @@
+import firebase from "firebase/app";
 import { db } from "../db/firebase";
 
 export const getAllCourses = async () => {
@@ -145,4 +146,20 @@ export const getCategoryTitle = (routingId) => {
   return categories.filter(
     (singleCategory) => singleCategory.payload === routingId
   );
+};
+
+export const submitOrder = async (userInfo, cart, total) => {
+  const newOrder = {
+    buyer: userInfo,
+    items: cart,
+    date: firebase.firestore.Timestamp.fromDate(new Date()),
+    total: total,
+  };
+  try {
+    const submit = await db.collection("orders").add(newOrder);
+    const id = await submit.id;
+    return id;
+  } catch (err) {
+    console.error("Error adding document: ", err);
+  }
 };
