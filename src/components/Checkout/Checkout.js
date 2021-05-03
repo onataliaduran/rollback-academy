@@ -1,7 +1,7 @@
 import styles from "./Checkout.module.css";
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
-import { CartContext, deleteAll } from "../../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 import { submitOrder } from "../../data/data";
 
 const Checkout = ({ total }) => {
