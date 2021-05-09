@@ -33,6 +33,22 @@ const CoursesContainer = ({ match }) => {
     }
   }, [match.params.id]);
 
+  useEffect(() => {
+    fetch("https://huntershub.herokuapp.com/v1/recruiters/login", {
+      method: "POST",
+      body: JSON.stringify({
+        username: "rainier",
+        password: "12345678",
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       {loader ? (
