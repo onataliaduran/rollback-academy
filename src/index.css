@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color: #212328;
+  /* background-color: #212328; */
+  background-color: #1a1c21;
   color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -15,7 +16,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.6rem;
 }
 
 body::-webkit-scrollbar-track {

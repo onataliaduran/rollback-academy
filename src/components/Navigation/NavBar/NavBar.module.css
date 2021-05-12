@@ -1,16 +1,14 @@
-/* .selected {
-  color: red;
-} */
-
 .nav {
-  background-color: #1a1c21;
-  padding: 1rem 3rem;
+  padding: 1.5rem 4.5rem 1rem 4.5rem;
   display: flex;
 }
 
 .nav__logo {
   font-weight: 800;
   margin-right: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav__links {
@@ -42,8 +40,5 @@
 
 .nav__right {
   display: flex;
-}
-
-.nav__item {
-  margin-left: 1.1rem;
+  align-items: center;
 }

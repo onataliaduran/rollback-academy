@@ -1,12 +1,44 @@
 .course__container {
-  background-color: #1a1c21;
-  padding: 1rem;
+  /* background-color: #212328; */
+  /* padding: 1rem;
   border-radius: 0.2rem;
   cursor: pointer;
+  box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.022),
+    0 8.7px 6.9px rgba(0, 0, 0, 0.031), 0 17.7px 14.2px rgba(0, 0, 0, 0.039),
+    0 36.5px 29.2px rgba(0, 0, 0, 0.048), 0 100px 80px rgba(0, 0, 0, 0.07); */
+  position: relative;
+}
+
+.course__whiteShadow {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 0 0 5rem 0;
+  background: rgba(255, 255, 255, 0.116);
+  /* background: rgba(219, 29, 29, 0.267); */
+  position: absolute;
+  top: 3rem;
+  left: 6.5rem;
+  z-index: -2;
+}
+
+.course__glass {
+  background: linear-gradient(
+    to right bottom,
+    rgba(105, 105, 105, 0.1),
+    rgba(105, 105, 105, 0.3)
+  );
+  backdrop-filter: blur(20px);
+  /* color: #696969; */
+  padding: 2rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.022),
+    0 8.7px 6.9px rgba(0, 0, 0, 0.031), 0 17.7px 14.2px rgba(0, 0, 0, 0.039),
+    0 36.5px 29.2px rgba(0, 0, 0, 0.048), 0 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 .course__imgCont {
-  background-color: #1a1c21;
+  /* background-color: #1a1c21; */
   height: 9rem;
   display: flex;
   justify-content: center;
@@ -15,6 +47,19 @@
 
 .course__img {
   height: 5rem;
+}
+
+.course__circule {
+  background-color: rgba(105, 105, 105, 0.1);
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.course__content {
 }
 
 .course__title {
@@ -31,11 +76,14 @@
 }
 
 .course__btn {
-  background-color: #2f3035;
+  /* background-color: #2f3035; */
+  background-color: #1a1c21;
   color: #fff;
-  padding: 0.5em 1em;
+  font-family: inherit;
+  width: 100%;
+  padding: 1em 1em;
   border: none;
-  border-radius: 0.2em;
+  border-radius: 0.3em;
   margin-top: 1rem;
   outline: none;
   cursor: pointer;

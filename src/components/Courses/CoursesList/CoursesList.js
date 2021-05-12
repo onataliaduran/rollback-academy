@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import styles from "./CoursesList.module.css";
+import { Link } from "react-router-dom";
 import Course from "./Course/Course";
 
 const CoursesList = ({ courses }) => {

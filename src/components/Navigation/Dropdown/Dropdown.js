@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "./Dropdown.module.css";
-import { NavLink } from "react-router-dom";
 import { FiLayout, FiServer, FiBox } from "react-icons/fi";
+import DropdownItem from "./DropdownItem/DropdownItem";
 
 const Dropdown = ({ closeDropdown }) => {
   return (
@@ -9,37 +8,22 @@ const Dropdown = ({ closeDropdown }) => {
       <nav>
         <ul>
           <li className={styles.nav__dropdownLink} onClick={closeDropdown}>
-            <NavLink
-              to="/category/frontend"
-              className={styles.nav__dropdownItem}
-            >
-              <div className={styles.nav__dropdownIcon}>
-                <FiLayout />
-              </div>
-              <div>Frontend</div>
-            </NavLink>
+            <DropdownItem path="/category/frontend" txt="Frontend">
+              <FiLayout />
+            </DropdownItem>
           </li>
           <li className={styles.nav__dropdownLink} onClick={closeDropdown}>
-            <NavLink
-              to="/category/backend"
-              className={styles.nav__dropdownItem}
-            >
-              <div className={styles.nav__dropdownIcon}>
-                <FiServer />
-              </div>
-              <div>Backend</div>
-            </NavLink>
+            <DropdownItem path="/category/backend" txt="Backend">
+              <FiServer />
+            </DropdownItem>
           </li>
           <li className={styles.nav__dropdownLink} onClick={closeDropdown}>
-            <NavLink
-              to="/category/programingFundamentals"
-              className={styles.nav__dropdownItem}
+            <DropdownItem
+              path="/category/programingFundamentals"
+              txt="Programming Fundamentals"
             >
-              <div className={styles.nav__dropdownIcon}>
-                <FiBox />
-              </div>
-              <div>Programming Fundamentals</div>
-            </NavLink>
+              <FiBox />
+            </DropdownItem>
           </li>
         </ul>
       </nav>

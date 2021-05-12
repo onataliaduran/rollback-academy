@@ -1,22 +1,23 @@
 .nav__dropdown {
   background-color: #2a2b2e;
-  width: 11rem;
-  height: 13rem;
-  padding: 1rem;
+  width: 13rem;
+  height: 15rem;
+  padding: 2rem;
   border-radius: 0.2rem;
   position: absolute;
   top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav__dropdownLink {
+  padding: 0.3rem 1rem;
+  border-radius: 0.3rem;
   margin-bottom: 1rem;
+  transition: 0.1s ease-in-out;
 }
 
-.nav__dropdownItem {
-  display: flex;
-}
-
-.nav__dropdownIcon {
-  font-size: 1.1rem;
-  margin-right: 0.9rem;
+.nav__dropdownLink:hover {
+  background-color: #1a1c21;
 }

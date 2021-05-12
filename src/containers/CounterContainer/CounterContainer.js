@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Counter from "../../components/Counter/Counter";
 
 const CounterContainer = ({ onAdd, alreadyAdded }) => {

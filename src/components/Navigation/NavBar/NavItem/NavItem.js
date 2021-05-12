@@ -1,13 +1,18 @@
-import React from "react";
 import styles from "./NavItem.module.css";
 import { NavLink } from "react-router-dom";
 
-export const NavItem = ({ path, title }) => {
+const NavItem = ({ path, children }) => {
   return (
-    <div>
-      <NavLink to="/" exact activeClassName={styles.selected}>
-        Rollback
+    <>
+      <NavLink
+        to={path}
+        className={styles.nav__item}
+        activeClassName={styles.selected}
+      >
+        <div>{children}</div>
       </NavLink>
-    </div>
+    </>
   );
 };
+
+export default NavItem;

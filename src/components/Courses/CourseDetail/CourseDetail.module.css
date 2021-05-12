@@ -1,6 +1,8 @@
 .details__grid {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
 .details__imgCont {
@@ -10,7 +12,11 @@
 }
 
 .details__img {
-  width: 25rem;
+  width: 23rem;
+}
+
+.details__infoCont {
+  margin-right: 5rem;
 }
 
 .details__title {
@@ -24,7 +30,6 @@
 }
 
 .details__description {
-  width: 80%;
   margin-bottom: 1rem;
 }
 

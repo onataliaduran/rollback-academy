@@ -1,19 +1,21 @@
-import React, { useState, useEffect, useContext } from "react";
 import styles from "./MainLayout.module.css";
+import { useState, useEffect, useContext } from "react";
 import { Switch, Route } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 // Components
 import NavBar from "../../Navigation/NavBar/NavBar";
-import CoursesContainer from "../../../containers/CoursesContainer/CoursesContainer";
-import CourseDetailContainer from "../../../containers/CourseDetailContainer/CourseDetailContainer";
 import Cart from "../../Cart/Cart";
+import CoursesListContainer from "../../../containers/CoursesListContainer/CoursesListContainer";
+import CourseDetailContainer from "../../../containers/CourseDetailContainer/CourseDetailContainer";
 import Checkout from "../../Checkout/Checkout";
 
 const MainLayout = () => {
   const { acumulator, totalCalculator } = useContext(CartContext);
+
   const [dropdownOpened, setDropdownOpened] = useState(false);
   const [productsInCart, setProductsInCart] = useState(0);
   const [total, setTotal] = useState(0);
+
   const dropdownToggler = () => setDropdownOpened(!dropdownOpened);
   const closeDropdown = () => setDropdownOpened(false);
 
@@ -37,10 +39,10 @@ const MainLayout = () => {
       <main className={styles.layout__content} onClick={closeDropdown}>
         <Switch>
           <Route exact path="/">
-            <CoursesContainer />
+            <CoursesListContainer />
           </Route>
           <Route exact path="/category/:id">
-            <CoursesContainer />
+            <CoursesListContainer />
           </Route>
           <Route exact path="/course/:id">
             <CourseDetailContainer />
