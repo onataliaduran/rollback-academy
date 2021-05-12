@@ -26,6 +26,14 @@ const Counter = ({
           {txtBtn}
         </button>
       )}
+
+      {/* <div>
+        <div>
+          <button>-</button>
+          <span>0</span>
+          <button>+</button>
+        </div>
+      </div> */}
     </div>
   );
 };
