@@ -1,32 +1,6 @@
 import styles from "./CourseDetail.module.css";
-import { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-import { CartContext } from "../../../context/CartContext";
-import CounterContainer from "../../../containers/CounterContainer/CounterContainer";
 
-export const CourseDetail = ({ details }) => {
-  const { addItem, isInCart } = useContext(CartContext);
-
-  const [alreadyAdded, setAlreadyAdded] = useState(false);
-  const [stateItem, setStateItem] = useState(0);
-
-  const onAdd = (number) => setStateItem(number);
-
-  useEffect(() => {
-    if (isInCart(details.id)) {
-      setAlreadyAdded(true);
-    }
-  }, [details.id]);
-
-  useEffect(() => {
-    if (stateItem > 0) {
-      addItem({
-        item: { ...details },
-        quantity: stateItem,
-      });
-    }
-  }, [stateItem]);
-
+export const CourseDetail = ({ details, children }) => {
   return (
     <div className={styles.details__grid}>
       <div className={styles.details__imgCont}>
@@ -40,16 +14,22 @@ export const CourseDetail = ({ details }) => {
         <h1 className={styles.details__title}>{details.title} </h1>
         <p className={styles.details__price}>{details.price}</p>
         <p className={styles.details__description}>{details.description}</p>
-        <CounterContainer onAdd={onAdd} alreadyAdded={alreadyAdded} />
-        {alreadyAdded && (
+
+        <div className={styles.details__btnGroup}>
+          <div className={styles.details__counter}>{children[0]}</div>
+          <div className={styles.details__btnAddToCart}>{children[1]}</div>
+          <button className={styles.details__btnBuyNow}>Buy now</button>
+        </div>
+
+        {/* {alreadyAdded && (
           <p>You already added this product to your shopping cart</p>
-        )}
+        )} */}
         {/* {stateItem > 0 && (
           <Link to="/cart">
             <button className={styles.btn__buy}>Go to shopping Cart</button>
           </Link>
         )} */}
-        {stateItem > 0 && <p>Items added to the Shopping Cart</p>}
+        {/* {stateItem > 0 && <p>Items added to the Shopping Cart</p>} */}
       </div>
     </div>
   );

@@ -1,13 +1,12 @@
-import styles from "./Course.module.css";
+import styles from "./CourseCard.module.css";
 
-const Course = ({ img, title, description, price }) => {
+const CourseCard = ({ img, title, description, price }) => {
   return (
     <div className={styles.course__container}>
       <div className={styles.course__whiteShadow}></div>
       <div className={styles.course__glass}>
         {img && (
           <div className={styles.course__imgCont}>
-            {/* <img className={styles.course__img} src={img} alt={title} /> */}
             <div className={styles.course__circule}>
               <img className={styles.course__img} src={img} alt={title} />
             </div>
@@ -24,4 +23,4 @@ const Course = ({ img, title, description, price }) => {
   );
 };
 
-export default Course;
+export default CourseCard;

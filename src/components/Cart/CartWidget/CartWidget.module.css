@@ -11,11 +11,12 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 5px;
-  left: -12px;
+  top: 7px;
+  left: -8px;
 }
 
 .cart___number {
+  color: #fff;
   font-size: 0.7rem;
   font-weight: 700;
 }

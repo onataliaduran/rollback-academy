@@ -1,40 +1,28 @@
-import React from "react";
 import styles from "./Counter.module.css";
 
-const Counter = ({
-  counter,
-  addHandler,
-  removeHandler,
-  buyEnabled,
-  add,
-  txtBtn,
-}) => {
+const Counter = ({ initialValue, handler }) => {
+  const addItemHandler = () => {
+    handler(initialValue + 1);
+  };
+
+  const removeItemHandler = () => {
+    if (initialValue !== 0) {
+      handler(initialValue - 1);
+    }
+  };
+
   return (
-    <div>
-      <span>Quantity</span>
-      <span className={styles.counter}>{counter}</span>
-      <div>
-        <button className={styles.btn} onClick={removeHandler}>
-          Remove
+    <>
+      <div className={styles.counter__container}>
+        <button className={styles.btn__quantity} onClick={removeItemHandler}>
+          -
         </button>
-        <button className={styles.btn} onClick={addHandler}>
-          Add
+        <span className={styles.counter__number}>{initialValue}</span>
+        <button className={styles.btn__quantity} onClick={addItemHandler}>
+          +
         </button>
       </div>
-      {buyEnabled && (
-        <button className={styles.btn__outline} onClick={add}>
-          {txtBtn}
-        </button>
-      )}
-
-      {/* <div>
-        <div>
-          <button>-</button>
-          <span>0</span>
-          <button>+</button>
-        </div>
-      </div> */}
-    </div>
+    </>
   );
 };
 

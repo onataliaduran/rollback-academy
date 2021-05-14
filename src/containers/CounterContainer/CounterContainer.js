@@ -1,52 +1,59 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import Counter from "../../components/Counter/Counter";
 
-const CounterContainer = ({ onAdd, alreadyAdded }) => {
-  const [stateCount, setStateCount] = useState(0);
-  const [buyEnabled, setBuyEnabled] = useState(false);
-  const [txtBtn, setTxtBtn] = useState("");
+const CounterContainer = ({ initialValue, handler, details }) => {
+  const { addItem, isInCart } = useContext(CartContext);
+
+  const [counter, setCounter] = useState(initialValue);
+  const [addToCartEnabled, setAddToCartEnabled] = useState(false);
+  const [txtBtn, setTxtBtn] = useState("Add to cart");
 
   const addItemHandler = () => {
-    setStateCount(stateCount + 1);
+    // setCounter(counter + 1);
+    handler(initialValue + 1);
   };
 
   const removeItemHandler = () => {
-    if (stateCount !== 0) {
-      setStateCount(stateCount - 1);
+    if (initialValue !== 0) {
+      // setCounter(counter - 1);
+      handler(initialValue - 1);
     }
   };
 
-  const add = () => {
-    console.log(stateCount);
-    onAdd(stateCount);
-  };
-
-  const txtBtnHandler = () => {
-    if (alreadyAdded) {
-      setTxtBtn("Update in cart");
-    } else {
-      setTxtBtn("Add to cart");
+  const addToCartHandler = () => {
+    if (counter > 0) {
+      addItem({
+        item: { ...details },
+        quantity: counter,
+      });
     }
   };
 
   useEffect(() => {
-    if (stateCount > 0) {
-      setBuyEnabled(true);
-      txtBtnHandler();
+    if (isInCart(details.id)) {
+      setTxtBtn("Update in cart");
     } else {
-      setBuyEnabled(false);
+      setTxtBtn("Add to cart");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [stateCount]);
+  }, [details.id]);
+
+  useEffect(() => {
+    if (initialValue > 0) {
+      setAddToCartEnabled(true);
+    } else {
+      setAddToCartEnabled(false);
+    }
+  }, [initialValue]);
 
   return (
     <div>
       <Counter
-        counter={stateCount}
+        counter={counter}
         addHandler={addItemHandler}
         removeHandler={removeItemHandler}
-        buyEnabled={buyEnabled}
-        add={add}
+        addToCartEnabled={addToCartEnabled}
+        addToCartHandler={addToCartHandler}
         txtBtn={txtBtn}
       />
     </div>

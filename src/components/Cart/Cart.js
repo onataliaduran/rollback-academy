@@ -1,14 +1,17 @@
-import React, { useContext } from "react";
 import styles from "./Cart.module.css";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { FiTrash2 } from "react-icons/fi";
 import { CartContext } from "../../context/CartContext";
+import Counter from "../Counter/Counter";
 
 const Cart = ({ total }) => {
   const { cart, removeItem, deleteAll } = useContext(CartContext);
+  console.log("CAAAR", cart);
 
   return (
     <div>
-      <h1>Your Shopping Cart</h1>
+      <h1 className={styles.cart__title}>Your Shopping Cart</h1>
 
       {!cart.length > 0 && (
         <div className={styles.msjCont}>
@@ -23,23 +26,32 @@ const Cart = ({ total }) => {
         <div>
           {cart.map((itemInCart) => {
             return (
-              <div className={styles.product} key={itemInCart.item.id}>
-                <img
-                  className={styles.thumbnail}
-                  src={itemInCart.item.img}
-                  alt={itemInCart.item.title}
-                />
-                <div>
-                  <span>x{itemInCart.quantity}</span>
-                  <span> {itemInCart.item.title} Course</span>
-                  <button
-                    className={styles.btn}
-                    onClick={() => removeItem(itemInCart.item.id)}
-                  >
-                    Delete
-                  </button>
+              <>
+                <div className={styles.cart__product} key={itemInCart.item.id}>
+                  <img
+                    className={styles.thumbnail}
+                    src={itemInCart.item.img}
+                    alt={itemInCart.item.title}
+                  />
+                  <div className={styles.product__info}>
+                    <p className={styles.product__title}>
+                      {itemInCart.item.title} Course
+                    </p>
+                    <div className={styles.product__counter}>
+                      <Counter initialValue={itemInCart.quantity} />
+                    </div>
+                    <p className={styles.product__price}>
+                      ${itemInCart.item.price * itemInCart.quantity}
+                    </p>
+                    <button
+                      className={styles.btn}
+                      onClick={() => removeItem(itemInCart.item.id)}
+                    >
+                      <FiTrash2 />
+                    </button>
+                  </div>
                 </div>
-              </div>
+              </>
             );
           })}
         </div>
