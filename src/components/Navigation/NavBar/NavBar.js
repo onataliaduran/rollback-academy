@@ -32,18 +32,8 @@ const NavBar = ({
 
         <ul className={styles.nav__right}>
           <li>
-            <NavItem path="/favorites">
-              <FiStar />
-            </NavItem>
-          </li>
-          <li>
             <NavItem path="/cart">
               <CartWidget totalProducts={productsInCart} />
-            </NavItem>
-          </li>
-          <li>
-            <NavItem path="/account">
-              <FiUser />
             </NavItem>
           </li>
         </ul>

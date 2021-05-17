@@ -1,83 +1,59 @@
 import styles from "./Cart.module.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { FiTrash2 } from "react-icons/fi";
 import { CartContext } from "../../context/CartContext";
-import Counter from "../Counter/Counter";
+import SelectedCourses from "../Courses/SelectedCourses/SelectedCourses";
 
 const Cart = ({ total }) => {
-  const { cart, removeItem, deleteAll } = useContext(CartContext);
-  console.log("CAAAR", cart);
+  const { cart, deleteAll } = useContext(CartContext);
 
   return (
-    <div>
+    <div className={styles.cart__container}>
       <h1 className={styles.cart__title}>Your Shopping Cart</h1>
 
-      {!cart.length > 0 && (
+      {!cart.length > 0 ? (
         <div className={styles.msjCont}>
           <p className={styles.msjtxt}>You haven't added any course yet</p>
           <Link to="/">
-            <button className={styles.btn}>Keep searching</button>
+            <button className={styles.cart__btnEmtpy}>Keep searching</button>
           </Link>
         </div>
-      )}
+      ) : (
+        <div className={styles.cart__grid}>
+          <div className={styles.cart__list}>
+            <SelectedCourses courses={cart} />
+          </div>
 
-      <div className={styles.cart__grid}>
-        <div>
-          {cart.map((itemInCart) => {
-            return (
-              <>
-                <div className={styles.cart__product} key={itemInCart.item.id}>
-                  <img
-                    className={styles.thumbnail}
-                    src={itemInCart.item.img}
-                    alt={itemInCart.item.title}
-                  />
-                  <div className={styles.product__info}>
-                    <p className={styles.product__title}>
-                      {itemInCart.item.title} Course
-                    </p>
-                    <div className={styles.product__counter}>
-                      <Counter initialValue={itemInCart.quantity} />
-                    </div>
-                    <p className={styles.product__price}>
-                      ${itemInCart.item.price * itemInCart.quantity}
-                    </p>
-                    <button
-                      className={styles.btn}
-                      onClick={() => removeItem(itemInCart.item.id)}
-                    >
-                      <FiTrash2 />
-                    </button>
-                  </div>
-                </div>
-              </>
-            );
-          })}
-        </div>
-        <div>
-          <div>
-            {total > 0 && (
+          <div className={styles.cart__totalCont}>
+            <div className={styles.cart__glass}>
               <div>
-                <h2>Total</h2>
-                <p className={styles.total}>${total}</p>
+                {total > 0 && (
+                  <div>
+                    <h2>Total</h2>
+                    <p className={styles.total}>${total}</p>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-          <div>
-            {cart.length > 0 && (
-              <>
-                <button className={styles.btn} onClick={deleteAll}>
-                  Clear All
-                </button>
-                <Link to="/checkout">
-                  <button className={styles.btn}>Checkout</button>
-                </Link>
-              </>
-            )}
+              <div className={styles.cart__cardBtnGroup}>
+                {cart.length > 0 && (
+                  <>
+                    <div>
+                      <button className={styles.btn} onClick={deleteAll}>
+                        Clear All
+                      </button>
+                    </div>
+                    <div>
+                      <Link to="/checkout">
+                        <button className={styles.btn}>Checkout</button>
+                      </Link>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

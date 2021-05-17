@@ -1,32 +1,29 @@
 import styles from "./Checkout.module.css";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { submitOrder } from "../../data/data";
+import SelectedCourses from "../Courses/SelectedCourses/SelectedCourses";
 
 const Checkout = ({ total }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const { cart, deleteAll } = useContext(CartContext);
   const [showOrderReview, setShowOrderReview] = useState(false);
   const [orderId, setOrderId] = useState("");
-  const [formState, setFormState] = useState({
-    formValues: {
-      name: "",
-      phone: "",
-      email: "",
-    },
-  });
+  const [btnEnable, setBtnEnable] = useState(false);
+  const [formState, setFormState] = useState({});
 
-  const handleChange = ({ target }) => {
-    const inputValue = target.value;
-    const { formValues } = formState;
-    formValues[target.name] = inputValue;
-    setFormState({ formValues });
-    console.log("Form values", formValues);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setShowOrderReview(true);
+  const onSubmit = (data) => {
+    if (data.email === data.emailConfirmation) {
+      setFormState({ ...data });
+      setBtnEnable(true);
+      setShowOrderReview(true);
+    }
   };
 
   const handlerOrderSubmit = () => {
@@ -45,85 +42,111 @@ const Checkout = ({ total }) => {
             <h2>Your order was submitted</h2>
             <p>Your order ID is: {orderId}</p>
             <Link to="/">
-              <button className={styles.btns}>Go to Home</button>
+              <button className={styles.btn__home}>Go to Home</button>
             </Link>
           </div>
         ) : (
-          <div>
-            {!showOrderReview ? (
-              <form onSubmit={handleSubmit}>
+          <div className={styles.checkout__grid}>
+            <div>
+              {!showOrderReview ? (
+                <form
+                  className={styles.checkout__form}
+                  onSubmit={handleSubmit(onSubmit)}
+                >
+                  <div className={styles.checkout__input}>
+                    <input
+                      id="name"
+                      type="text"
+                      name="name"
+                      {...register("name", { required: true })}
+                      placeholder="Fullname"
+                    />
+                    {errors.name && (
+                      <div className={styles.err}>This field is required</div>
+                    )}
+                  </div>
+                  <div className={styles.checkout__input}>
+                    <input
+                      id="phone"
+                      type="text"
+                      name="phone"
+                      {...register("phone", { required: true })}
+                      placeholder="Phone"
+                    />
+                    {errors.phone && (
+                      <div className={styles.err}>This field is required</div>
+                    )}
+                  </div>
+                  <div className={styles.checkout__input}>
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      {...register("email", { required: true })}
+                      placeholder="Email"
+                    />
+                    {errors.email && (
+                      <div className={styles.err}>This field is required</div>
+                    )}
+                  </div>
+                  <div className={styles.checkout__input}>
+                    <input
+                      id="emailConfirmation"
+                      type="email"
+                      name="emailConfirmation"
+                      {...register("emailConfirmation", { required: true })}
+                      placeholder="Confirm Email"
+                    />
+                    {errors.emailConfirmation && (
+                      <div className={styles.err}>This field is required</div>
+                    )}
+                  </div>
+                  <div>
+                    <button className={styles.btns} type="submit">
+                      Continue
+                    </button>
+                  </div>
+                </form>
+              ) : (
                 <div>
-                  <label htmlFor="name">Name</label>
-                  <input
-                    id="name"
-                    type="text"
-                    name="name"
-                    value={formState.formValues.name}
-                    onChange={handleChange}
-                  />
+                  <div className={styles.checkout__billingCont}>
+                    <h2>Billing information</h2>
+                    <div className={styles.checkout__billingInfo}>
+                      <p>Name: {formState.name}</p>
+                      <p>Phone: {formState.phone}</p>
+                      <p>Email: {formState.email}</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h2>Order Details</h2>
+                    <div>
+                      <SelectedCourses courses={cart} />
+                    </div>
+                  </div>
                 </div>
+              )}
+            </div>
+            <div>
+              <div className={styles.checkout__glass}>
                 <div>
-                  <label htmlFor="phone">Phone</label>
-                  <input
-                    id="phone"
-                    type="text"
-                    name="phone"
-                    value={formState.formValues.phone}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email">Email</label>
-                  <input
-                    id="email"
-                    type="text"
-                    name="email"
-                    value={formState.formValues.email}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <button className={styles.btns} type="submit">
-                    Continue
-                  </button>
-                </div>
-              </form>
-            ) : (
-              <div>
-                <h2>Order Review</h2>
-                <div>
-                  <h3>Buyer:</h3>
-                  <p>Name: {formState.formValues.name}</p>
-                  <p>Phone: {formState.formValues.phone}</p>
-                  <p>Email: {formState.formValues.email}</p>
-                </div>
-                <div>
-                  <h3>Items:</h3>
-                  {cart.map((itemInCart) => {
-                    return (
-                      <div className={styles.grid} key={itemInCart.item.id}>
-                        <img
-                          className={styles.img}
-                          src={itemInCart.item.img}
-                          alt={itemInCart.item.title}
-                        />
-                        <div>
-                          s<span>x{itemInCart.quantity}</span>
-                          <span> {itemInCart.item.title} Course</span>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div>
-                  <h3>Total:</h3>
-                  <p>{total}</p>
-                  <button className={styles.btns} onClick={handlerOrderSubmit}>
-                    Finish order
-                  </button>
+                  {total > 0 && (
+                    <div>
+                      <h2>Total</h2>
+                      <p className={styles.checkout__total}>${total}</p>
+                    </div>
+                  )}
+                  <div>
+                    <button
+                      disabled={!btnEnable}
+                      className={styles.btns}
+                      onClick={handlerOrderSubmit}
+                    >
+                      Finish order
+                    </button>
+                  </div>
                 </div>
               </div>
-            )}
+            </div>
           </div>
         )}
       </>

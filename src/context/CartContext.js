@@ -4,6 +4,7 @@ export const CartContext = React.createContext([]);
 
 export const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
+  const [newQuantity, setNewQuantity] = useState();
 
   const addItem = (incomingItem) => {
     if (isInCart(incomingItem.item.id)) {

@@ -33,21 +33,12 @@
   margin-bottom: 1.5rem;
 }
 
-/* .details__btnGroup {
-  display: grid;
-  grid-template-columns: 25% 85%;
-  gap: 1rem;
-  margin-top: 2rem;
-} */
-
 .details__counter {
   width: 25%;
   margin-bottom: 1.5rem;
 }
 
 .details__btnAddToCart button {
-  /* background: #2f3035;
-  color: #fff; */
   font-weight: 600;
   width: 100%;
   padding: 0.8rem 1rem;
@@ -64,7 +55,7 @@
   cursor: not-allowed;
 }
 
-.details__btnBuyNow {
+.details__btnBuyNow button {
   background-color: transparent;
   color: #fff;
   width: 100%;
@@ -73,4 +64,10 @@
   border-radius: 0.3rem;
   outline: none;
   cursor: pointer;
+}
+
+.details__btnBuyNow button:disabled {
+  color: rgb(184 184 184 / 12%);
+  border: 2px solid rgb(184 184 184 / 12%);
+  cursor: not-allowed;
 }

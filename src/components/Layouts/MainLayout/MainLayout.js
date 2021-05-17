@@ -2,7 +2,6 @@ import styles from "./MainLayout.module.css";
 import { useState, useEffect, useContext } from "react";
 import { Switch, Route } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
-// Components
 import NavBar from "../../Navigation/NavBar/NavBar";
 import Cart from "../../Cart/Cart";
 import CoursesListContainer from "../../../containers/CoursesListContainer/CoursesListContainer";

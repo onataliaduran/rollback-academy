@@ -18,18 +18,8 @@ export const CourseDetail = ({ details, children }) => {
         <div className={styles.details__btnGroup}>
           <div className={styles.details__counter}>{children[0]}</div>
           <div className={styles.details__btnAddToCart}>{children[1]}</div>
-          <button className={styles.details__btnBuyNow}>Buy now</button>
+          <div className={styles.details__btnBuyNow}>{children[2]}</div>
         </div>
-
-        {/* {alreadyAdded && (
-          <p>You already added this product to your shopping cart</p>
-        )} */}
-        {/* {stateItem > 0 && (
-          <Link to="/cart">
-            <button className={styles.btn__buy}>Go to shopping Cart</button>
-          </Link>
-        )} */}
-        {/* {stateItem > 0 && <p>Items added to the Shopping Cart</p>} */}
       </div>
     </div>
   );

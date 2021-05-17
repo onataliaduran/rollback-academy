@@ -1,6 +1,6 @@
 // Dependencies
 import { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // Data
 import { getCourse } from "../../data/data";
 import { CartContext } from "../../context/CartContext";
@@ -16,7 +16,7 @@ const CourseDetailContainer = () => {
   const [details, setDetails] = useState({});
   const [quantity, setQuantity] = useState(0);
 
-  const [addToCartEnabled, setAddToCartEnabled] = useState(false);
+  const [btnEnabled, setBtnEnabled] = useState(false);
   const [txtBtn, setTxtBtn] = useState("Add to cart");
 
   const addToCartHandler = () => {
@@ -45,9 +45,9 @@ const CourseDetailContainer = () => {
 
   useEffect(() => {
     if (quantity > 0) {
-      setAddToCartEnabled(true);
+      setBtnEnabled(true);
     } else {
-      setAddToCartEnabled(false);
+      setBtnEnabled(false);
     }
   }, [quantity]);
 
@@ -59,9 +59,14 @@ const CourseDetailContainer = () => {
         <>
           <CourseDetail details={details}>
             <Counter initialValue={quantity} handler={setQuantity} />
-            <button disabled={!addToCartEnabled} onClick={addToCartHandler}>
+            <button disabled={!btnEnabled} onClick={addToCartHandler}>
               {txtBtn}
             </button>
+            <Link to="/cart">
+              <button disabled={!btnEnabled} onClick={addToCartHandler}>
+                Buy now
+              </button>
+            </Link>
           </CourseDetail>
         </>
       )}
