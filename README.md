@@ -4,6 +4,8 @@ El concepto detras de este proyecto es crear una tienda para comprar cursos onli
 
 :rocket: [Link al proyecto](https://rollback-academy.vercel.app/).
 
+![preview](./preview/preview_gif.gif)
+
 ## Scripts
 
 Para levantar en local, como todo proyetco de create-ract-app, se debe correr:
