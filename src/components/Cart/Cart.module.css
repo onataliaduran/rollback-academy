@@ -49,7 +49,7 @@
   padding: 1.5rem 2rem;
   margin: 2rem 0;
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 

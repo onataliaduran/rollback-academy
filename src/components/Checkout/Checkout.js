@@ -120,7 +120,7 @@ const Checkout = ({ total }) => {
                   <div>
                     <h2>Order Details</h2>
                     <div>
-                      <SelectedCourses courses={cart} />
+                      <SelectedCourses courses={cart} deleteEnabled={false} />
                     </div>
                   </div>
                 </div>

@@ -21,7 +21,7 @@ const Cart = ({ total }) => {
       ) : (
         <div className={styles.cart__grid}>
           <div className={styles.cart__list}>
-            <SelectedCourses courses={cart} />
+            <SelectedCourses courses={cart} deleteEnabled={true} />
           </div>
 
           <div className={styles.cart__totalCont}>

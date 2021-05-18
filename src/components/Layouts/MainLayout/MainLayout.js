@@ -1,5 +1,5 @@
 import styles from "./MainLayout.module.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { Switch, Route } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import NavBar from "../../Navigation/NavBar/NavBar";

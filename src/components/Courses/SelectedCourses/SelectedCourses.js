@@ -1,10 +1,10 @@
 import styles from "./SelectedCourses.module.css";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { FiTrash2 } from "react-icons/fi";
 import { CartContext } from "../../../context/CartContext";
 import Counter from "../../Counter/Counter";
 
-const SelectedCourses = ({ courses }) => {
+const SelectedCourses = ({ courses, deleteEnabled }) => {
   const { removeItem } = useContext(CartContext);
 
   return (
@@ -39,14 +39,16 @@ const SelectedCourses = ({ courses }) => {
                 </p>
               </div>
               {/* DELETE */}
-              <div className={styles.course__btnCont}>
-                <button
-                  className={styles.course__btn}
-                  onClick={() => removeItem(course.item.id)}
-                >
-                  <FiTrash2 />
-                </button>
-              </div>
+              {deleteEnabled && (
+                <div className={styles.course__btnCont}>
+                  <button
+                    className={styles.course__btn}
+                    onClick={() => removeItem(course.item.id)}
+                  >
+                    <FiTrash2 />
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         );
