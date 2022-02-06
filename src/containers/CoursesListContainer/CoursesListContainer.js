@@ -17,12 +17,19 @@ const CoursesListContainer = ({ match }) => {
   const [coursesList, setCoursesList] = useState([]);
 
   useEffect(() => {
+    console.log('fired', match.params.id);
     if (!match.params.id) {
-      getAllCourses().then((array) => {
-        setCategoryTitle("All Courses");
-        setCoursesList(array);
-        setLoader(false);
-      });
+      getAllCourses()
+        .then((array) => {
+          setCategoryTitle("All Courses");
+          setCoursesList(array);
+          setLoader(false);
+        })
+        .catch((err) => {
+          setCategoryTitle("Sorry, no courses available :(");
+          setCoursesList([]);
+          setLoader(false);
+        });
     } else {
       const title = getCategoryTitle(match.params.id);
       setCategoryTitle(title[0].title);

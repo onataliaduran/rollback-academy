@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
-export const CartContext = React.createContext([]);
+export const CartContext: React.Context<CartContextValue> = React.createContext({});
+
+// export const CartContext = React.createContext([]);
+// export CartContext = React.createContext([]);
 
 export const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
@@ -50,7 +53,7 @@ export const CartProvider = (props) => {
 
   return (
     <CartContext.Provider
-      value={{
+      value={{  
         cart,
         addItem,
         isInCart,
@@ -64,3 +67,10 @@ export const CartProvider = (props) => {
     </CartContext.Provider>
   );
 };
+
+
+export interface CartContextValue {
+  [key: string]: any;
+  acumulator?: () => any;
+
+}
