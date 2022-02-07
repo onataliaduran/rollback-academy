@@ -9,6 +9,10 @@ import CourseDetailContainer from "../../../containers/CourseDetailContainer/Cou
 import Checkout from "../../Checkout/Checkout";
 
 const MainLayout = () => {
+
+  console.log('context', CartContext);
+  
+
   const { acumulator, totalCalculator } = useContext(CartContext);
 
   const [dropdownOpened, setDropdownOpened] = useState(false);
