@@ -10,9 +10,6 @@ import Checkout from "../../Checkout/Checkout";
 
 const MainLayout = () => {
 
-  console.log('context', CartContext);
-  
-
   const { acumulator, totalCalculator } = useContext(CartContext);
 
   const [dropdownOpened, setDropdownOpened] = useState(false);
