@@ -1,5 +1,5 @@
 import styles from "./MainLayout.module.css";
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Switch, Route } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import NavBar from "../../Navigation/NavBar/NavBar";
@@ -9,6 +9,7 @@ import CourseDetailContainer from "../../../containers/CourseDetailContainer/Cou
 import Checkout from "../../Checkout/Checkout";
 
 const MainLayout = () => {
+
   const { acumulator, totalCalculator } = useContext(CartContext);
 
   const [dropdownOpened, setDropdownOpened] = useState(false);

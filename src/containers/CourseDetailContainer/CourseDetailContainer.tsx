@@ -2,18 +2,23 @@
 import { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 // Data
+import { CourseDetails } from "../../common/types";
 import { getCourse } from "../../data/data";
 import { CartContext } from "../../context/CartContext";
 // Components
 import CourseDetail from "../../components/Courses/CourseDetail/CourseDetail";
 import Counter from "../../components/Counter/Counter";
 
+
 const CourseDetailContainer = () => {
-  const params = useParams();
+  const params = useParams<{id: string}>();
+
+  console.log(params);
+
   const { addItem, isInCart } = useContext(CartContext);
 
   const [loader, setLoader] = useState(true);
-  const [details, setDetails] = useState({});
+  const [details, setDetails] = useState({} as CourseDetails);
   const [quantity, setQuantity] = useState(0);
 
   const [btnEnabled, setBtnEnabled] = useState(false);
@@ -30,7 +35,7 @@ const CourseDetailContainer = () => {
 
   useEffect(() => {
     getCourse(params.id).then((course) => {
-      setDetails({ ...course });
+      setDetails({ ...course as CourseDetails });
       setLoader(false);
     });
   }, [params.id]);
@@ -75,3 +80,4 @@ const CourseDetailContainer = () => {
 };
 
 export default CourseDetailContainer;
+
