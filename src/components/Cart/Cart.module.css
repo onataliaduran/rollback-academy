@@ -1,88 +1,88 @@
 .cart__title {
-  margin-bottom: 3rem;
+	margin-bottom: 3rem;
 }
 
 .msjCont {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .msjtxt {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
 }
 
 .cart__btnEmtpy {
-  background-color: #0c0d0f;
-  color: #fff;
-  font-size: 1.1rem;
-  width: 100%;
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 0.3rem;
-  margin-bottom: 0.5rem;
-  outline: none;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
+	background-color: #0c0d0f;
+	color: #fff;
+	font-size: 1.1rem;
+	width: 100%;
+	padding: 0.8rem 2rem;
+	border: none;
+	border-radius: 0.3rem;
+	margin-bottom: 0.5rem;
+	outline: none;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
 }
 
 .cart__btnEmtpy:hover {
-  transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .btn {
-  background-color: #0c0d0f;
-  color: #fff;
-  width: 100%;
-  padding: 0.7rem 0;
-  border: none;
-  border-radius: 0.3rem;
-  margin-bottom: 0.5rem;
-  outline: none;
-  cursor: pointer;
+	background-color: #0c0d0f;
+	color: #fff;
+	width: 100%;
+	padding: 0.7rem 0;
+	border: none;
+	border-radius: 0.3rem;
+	margin-bottom: 0.5rem;
+	outline: none;
+	cursor: pointer;
 }
 
 .cart__grid {
-  padding: 1.5rem 2rem;
-  margin: 2rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+	padding: 1.5rem 2rem;
+	margin: 2rem 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
 }
 
 .cart__list {
-  padding: 0 1rem;
+	padding: 0 1rem;
 }
 
 .cart__totalCont {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .cart__cardBtnGroup {
-  margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 .total {
-  font-size: 2.5rem;
-  font-weight: 700;
+	font-size: 2.5rem;
+	font-weight: 700;
 }
 
 .cart__glass {
-  background: linear-gradient(
-    to right bottom,
-    rgba(105, 105, 105, 0.1),
-    rgba(105, 105, 105, 0.3)
-  );
-  backdrop-filter: blur(20px);
-  width: 80%;
-  padding: 2rem;
-  border-radius: 0.2rem;
-  cursor: pointer;
-  box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.022),
-    0 8.7px 6.9px rgba(0, 0, 0, 0.031), 0 17.7px 14.2px rgba(0, 0, 0, 0.039),
-    0 36.5px 29.2px rgba(0, 0, 0, 0.048), 0 100px 80px rgba(0, 0, 0, 0.07);
+	background: linear-gradient(
+		to right bottom,
+		rgba(105, 105, 105, 0.1),
+		rgba(105, 105, 105, 0.3)
+	);
+	backdrop-filter: blur(20px);
+	width: 80%;
+	padding: 2rem;
+	border-radius: 0.2rem;
+	cursor: pointer;
+	box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.022),
+		0 8.7px 6.9px rgba(0, 0, 0, 0.031), 0 17.7px 14.2px rgba(0, 0, 0, 0.039),
+		0 36.5px 29.2px rgba(0, 0, 0, 0.048), 0 100px 80px rgba(0, 0, 0, 0.07);
 }

@@ -1,9 +1,9 @@
 .dropdown__item {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .dropdown__icon {
-  font-size: 1.3rem;
-  margin-right: 0.9rem;
+	font-size: 1.3rem;
+	margin-right: 0.9rem;
 }

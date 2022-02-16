@@ -1,22 +1,22 @@
 .cart___container {
-  position: relative;
+	position: relative;
 }
 
 .cart___bubble {
-  background-color: rgb(180, 4, 4);
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 7px;
-  left: -8px;
+	background-color: rgb(180, 4, 4);
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 7px;
+	left: -8px;
 }
 
 .cart___number {
-  color: #fff;
-  font-size: 0.7rem;
-  font-weight: 700;
+	color: #fff;
+	font-size: 0.7rem;
+	font-weight: 700;
 }

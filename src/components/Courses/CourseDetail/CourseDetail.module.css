@@ -1,73 +1,73 @@
 .details__grid {
-  margin-top: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+	margin-top: 1rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
 }
 
 .details__imgCont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .details__img {
-  width: 23rem;
+	width: 23rem;
 }
 
 .details__infoCont {
-  margin-right: 5rem;
+	margin-right: 5rem;
 }
 
 .details__title {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .details__price {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
 }
 
 .details__description {
-  margin-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .details__counter {
-  width: 25%;
-  margin-bottom: 1.5rem;
+	width: 25%;
+	margin-bottom: 1.5rem;
 }
 
 .details__btnAddToCart button {
-  font-weight: 600;
-  width: 100%;
-  padding: 0.8rem 1rem;
-  border: none;
-  border-radius: 0.3rem;
-  margin-bottom: 0.5rem;
-  outline: none;
-  cursor: pointer;
+	font-weight: 600;
+	width: 100%;
+	padding: 0.8rem 1rem;
+	border: none;
+	border-radius: 0.3rem;
+	margin-bottom: 0.5rem;
+	outline: none;
+	cursor: pointer;
 }
 
 .details__btnAddToCart button:disabled {
-  background: #ffffff14;
-  color: rgb(184 184 184 / 12%);
-  cursor: not-allowed;
+	background: #ffffff14;
+	color: rgb(184 184 184 / 12%);
+	cursor: not-allowed;
 }
 
 .details__btnBuyNow button {
-  background-color: transparent;
-  color: #fff;
-  width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid #fff;
-  border-radius: 0.3rem;
-  outline: none;
-  cursor: pointer;
+	background-color: transparent;
+	color: #fff;
+	width: 100%;
+	padding: 0.8rem 1rem;
+	border: 1px solid #fff;
+	border-radius: 0.3rem;
+	outline: none;
+	cursor: pointer;
 }
 
 .details__btnBuyNow button:disabled {
-  color: rgb(184 184 184 / 12%);
-  border: 2px solid rgb(184 184 184 / 12%);
-  cursor: not-allowed;
+	color: rgb(184 184 184 / 12%);
+	border: 2px solid rgb(184 184 184 / 12%);
+	cursor: not-allowed;
 }

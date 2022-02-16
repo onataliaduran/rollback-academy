@@ -1,81 +1,81 @@
 .course__container {
-  position: relative;
+	position: relative;
 }
 
 .course__whiteShadow {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 0 0 5rem 0;
-  background: rgba(255, 255, 255, 0.116);
-  position: absolute;
-  top: 3rem;
-  left: 6.5rem;
-  z-index: -2;
+	width: 6rem;
+	height: 6rem;
+	border-radius: 0 0 5rem 0;
+	background: rgba(255, 255, 255, 0.116);
+	position: absolute;
+	top: 3rem;
+	left: 6.5rem;
+	z-index: -2;
 }
 
 .course__glass {
-  background: linear-gradient(
-    to right bottom,
-    rgba(105, 105, 105, 0.1),
-    rgba(105, 105, 105, 0.3)
-  );
-  backdrop-filter: blur(20px);
-  padding: 2rem;
-  border-radius: 0.2rem;
-  cursor: pointer;
-  box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.022),
-    0 8.7px 6.9px rgba(0, 0, 0, 0.031), 0 17.7px 14.2px rgba(0, 0, 0, 0.039),
-    0 36.5px 29.2px rgba(0, 0, 0, 0.048), 0 100px 80px rgba(0, 0, 0, 0.07);
+	background: linear-gradient(
+		to right bottom,
+		rgba(105, 105, 105, 0.1),
+		rgba(105, 105, 105, 0.3)
+	);
+	backdrop-filter: blur(20px);
+	padding: 2rem;
+	border-radius: 0.2rem;
+	cursor: pointer;
+	box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.022),
+		0 8.7px 6.9px rgba(0, 0, 0, 0.031), 0 17.7px 14.2px rgba(0, 0, 0, 0.039),
+		0 36.5px 29.2px rgba(0, 0, 0, 0.048), 0 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 .course__imgCont {
-  height: 9rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	height: 9rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .course__img {
-  height: 5rem;
+	height: 5rem;
 }
 
 .course__circule {
-  background-color: rgba(105, 105, 105, 0.1);
-  width: 7rem;
-  height: 7rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	background-color: rgba(105, 105, 105, 0.1);
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .course__title {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .course__desc {
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 .course__price {
-  font-size: 1.1rem;
-  font-weight: 600;
+	font-size: 1.1rem;
+	font-weight: 600;
 }
 
 .course__btn {
-  background-color: #1a1c21;
-  color: #fff;
-  font-family: inherit;
-  width: 100%;
-  padding: 1em 1em;
-  border: none;
-  border-radius: 0.3em;
-  margin-top: 1rem;
-  outline: none;
-  cursor: pointer;
-  transition: 0.2s ease-in;
+	background-color: #1a1c21;
+	color: #fff;
+	font-family: inherit;
+	width: 100%;
+	padding: 1em 1em;
+	border: none;
+	border-radius: 0.3em;
+	margin-top: 1rem;
+	outline: none;
+	cursor: pointer;
+	transition: 0.2s ease-in;
 }
 
 .course__btn:hover {
-  transform: scale(1.1);
+	transform: scale(1.1);
 }
