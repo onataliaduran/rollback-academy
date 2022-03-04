@@ -1,19 +1,19 @@
 // Dependencies
-import { useState, useEffect } from "react";
-import { withRouter } from "react-router";
+import { useState, useEffect } from 'react';
+import { withRouter } from 'react-router';
 // Data
 import {
   getAllCourses,
   getCoursesByCategory,
   getCategoryTitle,
-} from "../../data/data";
+} from '../../data/data';
 // Components
-import Banner from "../../components/Courses/Banner/Banner";
-import CoursesList from "../../components/Courses/CoursesList/CoursesList";
+import Banner from '../../components/Courses/Banner/Banner';
+import CoursesList from '../../components/Courses/CoursesList/CoursesList';
 
 const CoursesListContainer = ({ match }) => {
   const [loader, setLoader] = useState(true);
-  const [categoryTitle, setCategoryTitle] = useState("");
+  const [categoryTitle, setCategoryTitle] = useState('');
   const [coursesList, setCoursesList] = useState([]);
 
   useEffect(() => {
@@ -21,12 +21,12 @@ const CoursesListContainer = ({ match }) => {
     if (!match.params.id) {
       getAllCourses()
         .then((array) => {
-          setCategoryTitle("All Courses");
+          setCategoryTitle('All Courses');
           setCoursesList(array);
           setLoader(false);
         })
         .catch((err) => {
-          setCategoryTitle("Sorry, no courses available :(");
+          setCategoryTitle('Sorry, no courses available :(');
           setCoursesList([]);
           setLoader(false);
         });

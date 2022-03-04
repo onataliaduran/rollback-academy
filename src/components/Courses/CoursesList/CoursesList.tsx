@@ -1,6 +1,8 @@
-import styles from "./CoursesList.module.css";
-import { Link } from "react-router-dom";
-import CourseCard from "../CourseCard/CourseCard";
+import styles from './CoursesList.module.css';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { submitTodo } from '../../../redux/actions';
+import CourseCard from '../CourseCard/CourseCard';
 
 const CoursesList = ({ courses }) => {
   return (
@@ -21,4 +23,11 @@ const CoursesList = ({ courses }) => {
   );
 };
 
-export default CoursesList;
+const mapStateToProps = (state) => {
+  console.log('state', state);
+  return state;
+};
+
+export default connect(mapStateToProps, {
+  submitTodo: submitTodo,
+})(CoursesList);
